@@ -1,9 +1,16 @@
-import { Gpio }  from 'onoff'
+import { SerialPort, SerialPortMock } from 'serialport'
+import OpenAI from 'openai'
+import knex from 'knex'
 
-export const GPIO_PINS = [ 3, 5, 7, 11, 
-                          13, 15, 19, 21,
-                          31, 33, 35, 37, ]
+SerialPortMock.binding.createPort(process.env.SERIALPORT)
+export const port = new SerialPortMock({ path: process.env.SERIALPORT, baudRate: 9600 })
+export const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+})
 
-export const GPIO_PINS_ARR = GPIO_PINS.map(pin => {
-  return new Gpio(pin, 'out')
+export const Knex = knex({
+  client: 'sqlite3',
+  connection: {
+    filename: './data.sqlite'
+  }
 })
