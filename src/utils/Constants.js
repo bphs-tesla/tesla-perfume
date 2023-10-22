@@ -1,16 +1,14 @@
-import { SerialPort, SerialPortMock } from 'serialport'
-import OpenAI from 'openai'
-import knex from 'knex'
-
-SerialPortMock.binding.createPort(process.env.SERIALPORT)
-export const port = new SerialPortMock({ path: process.env.SERIALPORT, baudRate: 9600 })
-export const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-})
-
-export const Knex = knex({
-  client: 'sqlite3',
-  connection: {
-    filename: './data.sqlite'
-  }
-})
+export const scents = {
+  A: '파인우드',
+  B: '시더우드',
+  C: '캐시미어우드',
+  D: '바닐라',
+  E: '자스민',
+  F: '라일락',
+  G: '씨센트',
+  H: '로즈마리',
+  I: '라벤더',
+  J: '비터레몬',
+  K: '뱀부',
+  L: '민트'
+}

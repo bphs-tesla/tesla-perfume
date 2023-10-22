@@ -14,6 +14,7 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@serialport/binding-mock": "^10.2.2",
+    "child_process": "^1.0.2",
     "eslint": "8.49.0",
     "eslint-config-next": "13.4.19",
     "framer-motion": "^10.16.4",
@@ -24,6 +25,7 @@
     "openai": "^4.12.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hotkeys-hook": "^4.4.1",
     "serialport": "^12.0.0",
     "sqlite3": "^5.1.6"
   }
