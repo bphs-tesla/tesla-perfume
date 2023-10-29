@@ -31,8 +31,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container maxW="container.xl" textAlign='center' paddingTop='12'>
-        <Heading as='h2' size='lg'>TESLA</Heading>
-        <Heading as='h1' size='2xl'>인공지능 조향기를 이용한 나만의 향수 만들기</Heading>
+        <Heading as='h2' size='lg' fontWeight='normal'>TESLA</Heading>
+        <Heading as='h1' size='2xl' fontWeight='semibold'>인공지능 조향기를 이용한 나만의 향수 만들기</Heading>
       </Container>
       <Container mt={20} textAlign='center'>
         <Heading size='md' mb={4}>MBTI: {mbtiFirst}{mbtiSecond}{mbtiThird}{mbtiFourth}</Heading>
@@ -48,8 +48,8 @@ export default function Home() {
         <Button colorScheme='red' mr={2} onClick={() => setMbtiFourth('J')} variant={mbtiFourth === 'J' ? 'solid' : 'outline'}>J</Button>
         <Button colorScheme='red' mr={8} onClick={() => setMbtiFourth('P')} variant={mbtiFourth === 'P' ? 'solid' : 'outline'}>P</Button>
       
-        <Heading size='md' my={4}>오늘의 기분:</Heading>
-        <Textarea borderColor='gray.300' placeholder='너무 길게 입력하면 안됨.' onChange={(e) => setFeeling(e.target.value)}>{feeling}</Textarea>
+        <Heading size='md' mt={12} mb={4}>오늘의 기분 또는 지금 드는 생각(고민/기분 등등):</Heading>
+        <Textarea borderColor='gray.300' placeholder='친구와 싸웠는데 화해를 어떻게 할지 모르겠어요.' onChange={(e) => setFeeling(e.target.value)}>{feeling}</Textarea>
           <Button as={Link} href={`/create?mbti=${mbtiFirst}${mbtiSecond}${mbtiThird}${mbtiFourth}&feeling=${feeling}&nonce=${Math.random().toString(16).substring(2, 11)}`} isDisabled={!feeling} colorScheme='blue' mt={4}>향수 제작하기</Button>
       </Container>
 
